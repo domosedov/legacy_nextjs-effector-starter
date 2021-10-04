@@ -5,7 +5,7 @@ import {
   createEffect,
   sample,
   guard,
-} from "effector-root";
+} from "@app/root";
 import type { Nullable } from "@app/shared/types";
 
 export const mounted = createEvent<NextRouter>();

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import type { GetServerSideProps } from "next";
-import { root, fork, allSettled, serialize } from "effector-root";
+import { root, fork, allSettled, serialize } from "@app/root";
 import type { NextPage } from "next";
 import { useStore, useEvent } from "effector-react";
 import { appModel } from "../application";
@@ -42,6 +42,9 @@ export function Page() {
 
 export const Dashboard: NextPage = () => {
   const user = useStore(appModel.$user);
+  const isLoading = useStore(appModel.getUserFx.pending);
+
+  if (isLoading) return <div>Loading...</div>;
 
   if (!user) return <div>Not auth</div>;
 

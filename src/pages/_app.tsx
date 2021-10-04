@@ -4,7 +4,7 @@ import type { AppProps } from "next/app";
 import Link from "next/link";
 import type { Scope } from "effector";
 import { Provider } from "effector-react/scope";
-import { root, fork, serialize } from "effector-root";
+import { root, fork, serialize } from "@app/root";
 import { AppProvider } from "@app/application";
 
 let clientScope: Scope;

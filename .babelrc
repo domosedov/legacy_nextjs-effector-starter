@@ -5,7 +5,12 @@
       "effector/babel-plugin",
       {
         "reactSsr": true,
-        "factories": ["@effector/reflect", "@effector/reflect/ssr"]
+        "factories": [
+          "@effector/reflect",
+          "@effector/reflect/ssr",
+          "@app/shared/factories/createCounter"
+        ],
+        "importName": ["@app/root"]
       }
     ]
   ]

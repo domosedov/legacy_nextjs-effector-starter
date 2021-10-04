@@ -1,16 +1,15 @@
 import { useEffect } from "react";
 import type { FC } from "react";
 import { useRouter } from "next/router";
-import { useEvent, useStore } from "effector-react";
+import { useEvent } from "effector-react";
 import * as model from "./model";
 
 export const AppProvider: FC = ({ children }) => {
   const router = useRouter();
   const mounted = useEvent(model.mounted);
-  // const user = useStore(model.$user);
 
   useEffect(() => {
-    console.log("App mounted");
+    console.log("Page mounted");
 
     mounted(router);
 
@@ -33,8 +32,6 @@ export const AppProvider: FC = ({ children }) => {
       router.events.off("routeChangeError", log);
     };
   }, [router, mounted]);
-
-  // if (!user) return <div>Loading...</div>;
 
   return <>{children}</>;
 };

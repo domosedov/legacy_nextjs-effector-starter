@@ -6,8 +6,6 @@ export const About: NextPage = () => {
   const router = useStore(appModel.$router);
   const user = useStore(appModel.$user);
 
-  console.log(user);
-
   if (!user) return <div>Not auth</div>;
 
   return (
