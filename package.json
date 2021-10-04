@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@effector/reflect": "^7.0.1",
     "effector": "^22.1.1",
+    "effector-inspector": "^0.7.3",
+    "effector-logger": "^0.13.0",
     "effector-react": "^22.0.4",
+    "effector-root": "git@github.com:domosedov/root.git",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
