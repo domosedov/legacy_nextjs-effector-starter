@@ -1,4 +1,4 @@
-import { createStore, createApi } from "@app/root";
+import { createStore, createApi } from "@app/effector-root";
 
 export const createCounter = () => {
   const $count = createStore(0);

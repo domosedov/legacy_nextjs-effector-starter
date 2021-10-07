@@ -5,7 +5,8 @@ import {
   createEffect,
   sample,
   guard,
-} from "@app/root";
+  restore,
+} from "@app/effector-root";
 import type { Nullable } from "@app/shared/types";
 
 export const mounted = createEvent<NextRouter>();
@@ -66,3 +67,11 @@ guard({
   filter: (user) => user !== null,
   target: fetchTodosFx,
 });
+
+export const fetchTodoByIdFx = createEffect<Todo["id"], Todo>(async (id) => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
+  const todo = await res.json();
+  return todo;
+});
+
+export const $todo = restore(fetchTodoByIdFx.doneData, null);

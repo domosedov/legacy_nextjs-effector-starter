@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { useStore } from "effector-react";
-import { appModel } from "../application";
+import { appModel } from "../root";
 
 export const About: NextPage = () => {
   const router = useStore(appModel.$router);

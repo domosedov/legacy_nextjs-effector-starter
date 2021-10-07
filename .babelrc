@@ -10,7 +10,7 @@
           "@effector/reflect/ssr",
           "@app/shared/factories/createCounter"
         ],
-        "importName": ["@app/root"]
+        "importName": ["@app/effector-root"]
       }
     ]
   ]
